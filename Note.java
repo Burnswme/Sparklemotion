@@ -1,4 +1,6 @@
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Note
 {
@@ -50,9 +52,9 @@ public class Note
    private void parseLetter(String s)
    {
       
-      if(s.length() > 1)
+      if(s.length() > 1) //check to see if the string has more than one element
       {
-         char tokens[] = s.toCharArray(s);
+         char tokens[] = s.toCharArray();
          setLetter(tokens[1]);
          
          //check to see if the note is an accidental "=^_"
@@ -84,9 +86,9 @@ public class Note
          
          this.isMajor = isMajor(tokens[1]);
       } 
-      else 
+      else //if it does not have more than one element, set first element
       {
-         setLetter(s);
+         setLetter(s.charAt(0));
          this.isMajor = isMajor(s.charAt(0));
       }
    }

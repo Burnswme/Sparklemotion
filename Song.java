@@ -1,6 +1,8 @@
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-public Class Song
+public class Song
 {
    private String title;
    private String key;
@@ -15,7 +17,7 @@ public Class Song
    }
    public Song(String t, String k, String n)
    {
-      String regEx = "\\d+/\\d+";
+      String regex = "\\d+/\\d+";
       Pattern p = Pattern.compile(regex);
       Matcher m = p.matcher(n);
       
